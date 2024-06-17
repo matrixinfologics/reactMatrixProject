@@ -18,10 +18,13 @@ import "slick-carousel/slick/slick-theme.css";
 import './customStyles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BlogDetails from './Components/BlogDetails';
+import CustomCSS from './Components/CustomCSS'; // Adjust the path as necessary
 
 
 const App = () => {
     return (
+       <>
+        <CustomCSS />
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -39,6 +42,7 @@ const App = () => {
                 <Route path="/woocommerce" element={<Woocommerce />} />
             </Routes>
         </Router>
+        </>
     );
 };
 

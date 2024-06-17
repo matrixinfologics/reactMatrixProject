@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import CustomCSS from '../Components/CustomCSS'; // Adjust the path as necessary
 
 const Header = () => {
     const [menuItems, setMenuItems] = useState([]);
@@ -66,6 +67,7 @@ const Header = () => {
 
     return (
         <>
+          <CustomCSS />
             <header>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container">
