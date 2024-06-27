@@ -1,6 +1,7 @@
 {
   "name": "matrixinfo",
   "homepage": "http://reactdev.matdevsolution.com/",
+  "proxy": "http://122.160.55.196:4344",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +13,9 @@
     "buffer": "^6.0.3",
     "emailjs-com": "^3.2.0",
     "html-react-parser": "^5.1.10",
+    "http-proxy-middleware": "^3.0.0",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-image-lightbox": "^5.1.4",

@@ -11,6 +11,10 @@ import Webflow from './Components/Pages/Webflow';
 import Magento from './Components/Pages/Magento';
 import Shopify from './Components/Pages/Shopify';
 import Woocommerce from './Components/Pages/Woocommerce';
+import WebDesigning from './Components/Pages/WebDesigning';
+import Bidding from './Components/Pages/Bidding';
+import Seo from './Components/Pages/Seo';
+import GraphicDesigning from './Components/Pages/GraphicDesigning';
 import PHP from './Components/Pages/PHP';
 import Header from './Components/Header';
 import "slick-carousel/slick/slick.css";
@@ -18,13 +22,10 @@ import "slick-carousel/slick/slick-theme.css";
 import './customStyles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BlogDetails from './Components/BlogDetails';
-import CustomCSS from './Components/CustomCSS'; // Adjust the path as necessary
 
 
 const App = () => {
     return (
-       <>
-        <CustomCSS />
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -40,9 +41,12 @@ const App = () => {
                 <Route path="/magento" element={<Magento />} />
                 <Route path="/shopify" element={<Shopify />} />
                 <Route path="/woocommerce" element={<Woocommerce />} />
+                <Route path="/web-designing" element={<WebDesigning/>} />
+                <Route path="/bidding" element={<Bidding/>} />
+                <Route path="/seo" element={<Seo/>} />
+                <Route path="/graphic-designing" element={<GraphicDesigning/>} />
             </Routes>
         </Router>
-        </>
     );
 };
 

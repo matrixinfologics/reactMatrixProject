@@ -57,8 +57,13 @@ const About = () => {
               <div className="row">
                 {/* Render the page title */}
                 {page.title && (
+                  <>
                   <h1 className="page-title">{page.title.rendered}</h1>
+                  <div><div className='heading-bottom-line'></div></div>
+                  </>
                 )}
+              
+                
               </div>
             </div>
           </section>
@@ -66,7 +71,7 @@ const About = () => {
             switch (block.acf_fc_layout) {
               case '_text_block':
                 return (
-                  <section className="multiple_text_block" key={index}>
+                  <section className="about-us-who-we-section" key={index}>
                     <div className="container">
                       <div className="row mb-4">
                         {block._multiple_text_block && (

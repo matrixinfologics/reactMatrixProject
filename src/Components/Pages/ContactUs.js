@@ -40,11 +40,11 @@ export default function ContactUs() {
   };
 
   return (
-      <div className="contact-form col-md-6">
-        <div className="mb-5 mt-3">
+      <div className="contact-form">
+        <div className="">
           <div lg="8">
             <h1 className="display-4 mb-4">Send Us With Message</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
+            
           </div>
         </div>
         <div className="sec_sp">

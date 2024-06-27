@@ -57,7 +57,10 @@ const Wordpress = () => {
               <div className="row">
                 {/* Render the page title */}
                 {page.title && (
+                  <>
                   <h1 className="page-title">{page.title.rendered}</h1>
+                  <div><div className='heading-bottom-line'></div></div>
+                  </>
                 )}
               </div>
             </div>
@@ -68,7 +71,7 @@ const Wordpress = () => {
                 return (
                   <section className="multiple_text_block" key={index}>
                     <div className="container">
-                      <div className="row mb-4">
+                      <div className="conrow mb-4">
                         {block._multiple_text_block && (
                             <div className="topSection">
                               <h2>{block._multiple_text_block._heading}</h2>
@@ -280,9 +283,9 @@ const Wordpress = () => {
                       return (
                         <section className="contact_block" key={index}>
                           <div className="container">
-                            <div className="row mb-4">
+                            <div className="contact-bx-wrapper">
                               {block._address_block && (
-                                  <div className="_address_block col-md-6">
+                                  <div className="_address_block">
                                       {parse(block._address_block)}
                                   </div>
                               )}

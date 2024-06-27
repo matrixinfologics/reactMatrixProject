@@ -57,7 +57,10 @@ const WebDevelopment = () => {
               <div className="row">
                 {/* Render the page title */}
                 {page.title && (
+                  <>
                   <h1 className="page-title">{page.title.rendered}</h1>
+                  <div><div className='heading-bottom-line'></div></div>
+                  </>
                 )}
               </div>
             </div>

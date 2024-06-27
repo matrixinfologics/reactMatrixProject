@@ -41,14 +41,29 @@ const Blog = () => {
     return (
         <>
             <Header />
-            <section className="container my-5">
-                <h2 className="text-center mb-4">Blog</h2>
+            <section className="page_title">
+            <div className="container">
+              <div className="row">
+                {/* Render the page title */}
+              
+                  <>
+                  <h1 className="page-title">Blog</h1>
+                  <div><div className='heading-bottom-line'></div></div>
+                  </>
+                
+              </div>
+            </div>
+          </section>
+          
+            <section className="blog-list-section">
+                <div className="container">
                 <div className="row">
                     {posts.map(post => {
                         const featuredMedia = post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0];
                         const featuredImageUrl = featuredMedia ? featuredMedia.source_url : '';
 
                         return (
+                                  <> 
                             <div className="col-md-4 mb-4" key={post.id}>
                                 <div className="card h-100">
                                     {featuredImageUrl && (
@@ -61,8 +76,10 @@ const Blog = () => {
                                     </div>
                                 </div>
                             </div>
+                            </>
                         );
                     })}
+                </div>
                 </div>
             </section>
             <Footer />

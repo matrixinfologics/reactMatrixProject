@@ -18,7 +18,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-dark text-white py-4">
+    <footer className="site-footer">
       <div className="container">
         <div className="row">
           <div className="col-md-4 footer-widget footer-1">
@@ -33,6 +33,13 @@ const Footer = () => {
           </div>
           <div className="col-md-4 footer-widget footer-4">
             {widgets.filter(widget => widget.sidebar === 'footer-4').map(widget => (
+              <div key={widget.id} dangerouslySetInnerHTML={{ __html: widget.rendered }} />
+            ))}
+          </div>
+        </div>
+        <div class="row bottomFotter">
+          <div className="col-md-12 copyright">
+            {widgets.filter(widget => widget.sidebar === 'bottom-footer').map(widget => (
               <div key={widget.id} dangerouslySetInnerHTML={{ __html: widget.rendered }} />
             ))}
           </div>

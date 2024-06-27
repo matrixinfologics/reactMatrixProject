@@ -10,6 +10,8 @@ import parse from 'html-react-parser';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css'; // Import the styles
 
+
+
 const Home = () => {
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -66,16 +68,17 @@ const Home = () => {
             switch (block.acf_fc_layout) {
               case '_text_block':
                 return (
-                  <section className="multiple_text_block" key={index}>
+                  <section className="our-services-section" key={index}>
                     <div className="container">
                       <div className="row mb-4">
                         {block._multiple_text_block && (
                             <div className="topSection">
                               <h2>{block._multiple_text_block._heading}</h2>
+                              <div className='heading-bottom-line'></div>
                               {parse(block._multiple_text_block._description)}
                             </div>
                         )}
-                        {block._multiple_text_block && (
+                        {/* {block._multiple_text_block && (
                             <div className="middenSection row">
                                 <div className="textarea col-md-6">
                                     <h2>{block._multiple_text_block._heading_two}</h2>
@@ -91,7 +94,7 @@ const Home = () => {
                                 <h2>{block._multiple_text_block._heading_three}</h2>
                                 {parse(block._multiple_text_block._description_three)}
                             </div>
-                        )}
+                        )} */}
                       </div>
                     </div>
                   </section>
@@ -124,14 +127,17 @@ const Home = () => {
                             {block.heading && (
                                 <div className="testmonial-title">
                                     <h2>{block.heading}</h2>
+                                    <div className='heading-bottom-line'></div>
                                 </div>
                             )}
                             <Slider {...settings} className="testmonial-slider">
                               {block._add_testimonials.map((item, index) => (
                                 <div key={index} className="p-4">
                                   {parse(item._description)}
+                                  <div className='testi-auth-bx'>
                                   {item._author_image && <img src={item._author_image.url} alt={item._author_image.alt} className="img-fluid my-2" />}
                                   <span>{item._name}</span>
+                                  </div>
                                 </div>
                               ))}
                             </Slider>
@@ -160,12 +166,13 @@ const Home = () => {
                   );
                   case 'text_with_bg_image':
                     return (
-                      <section id={block._add_section_id} className="textBg_section" key={index} style={block._bg_image ? { backgroundImage: `url(${block._bg_image.url})` } : {}}>
+                      <section id={block._add_section_id} className="inds-train-section" key={index} style={block._bg_image ? { backgroundImage: `url(${block._bg_image.url})` } : {}}>
                         <div className="container">
                           <div className="mb-4 textBg_block">
                             {block._heading && (
                                 <div className="textBg_heading">
                                     <h2>{block._heading}</h2>
+                                    <div className='heading-bottom-line'></div>
                                 </div>
                             )}
                              {block._description && (
@@ -179,7 +186,7 @@ const Home = () => {
                   );
                   case '_image_with_content':
                     return (
-                      <section className="textwC_section">
+                      <section className="who-we-are-section">
                         <div className="container">
                           <div className="row mb-4 textwC_block">
                             <div className="col-md-6 mb-4 textwC_img">
@@ -188,6 +195,7 @@ const Home = () => {
                               </div>
                             </div>
                             <div className="col-md-6 mb-4 textwC_con">
+                              <div className='who-we-are-content-bx'>
                               {block._heading && (
                                   <div className="_heading">
                                       <h2>{block._heading}</h2>
@@ -204,6 +212,7 @@ const Home = () => {
                                   </div>
                               )}
                             </div>
+                            </div>
                           </div>
                         </div>
                       </section>
@@ -217,7 +226,7 @@ const Home = () => {
                               {block._heading && (
                                   <div className="_heading">
                                       <h2>{block._heading}</h2>
-                                  </div>
+                                      <div class="heading-bottom-line"></div>                                  </div>
                               )}
                               {block._description && (
                                   <div className="_content">
@@ -250,9 +259,9 @@ const Home = () => {
                     return (
                       <section className="service_block">
                         <div key={page.id} className="container">
-                          <div className="row mb-4">
+                          <div className="service-wrapper">
                             {block._service_block.map((items, index) => (
-                             <div key={index} className="col-md-4 service-item">
+                             <div key={index} className="service-item">
                                   {items._icon && <img src={items._icon.url} alt={items._icon.alt} className="img-fluid" />}
                                   <h2>{items._heading}</h2>
                               </div>
